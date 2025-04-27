@@ -1,0 +1,799 @@
+{
+	"info": {
+		"_postman_id": "c56af254-784e-4723-8c48-dfeae1c2aad6",
+		"name": "Spring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34013458"
+	},
+	"item": [
+		{
+			"name": "mbanking",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "createNew",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "admin1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"actNo\": \"22221113\",\r\n    \"balance\": 300,\r\n    \"accountTypeAlias\": \"payroll\",\r\n    \"userUuid\": \"28feb706-f83a-4d70-8c42-4b2cc7956e0d\",\r\n    \"isDeleted\": false\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/accounts",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findList",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7IklkIjo5LCJSb2xlSWQiOjIsIlVzZXJuYW1lIjoiQWRtaW4xMDUiLCJJc0FjdGl2ZSI6bnVsbCwiQ3JlYXRlQnkiOm51bGwsIkNyZWF0ZUF0IjoiMjAyNC0wNC0yOVQxNDoyODowNi4wMDBaIn0sImlhdCI6MTcxNjIwOTYwNCwiZXhwIjoxNzE2MjA5NjY0fQ.Sqiw3KgDXUN7nWb7QBuD_LEdy7_kU6fk1lRFPgHUIIQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/accounts?pageNumber=0&pageSize=20",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "renameAccount",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"alias\": \"alias account payroll\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/accounts/22221111/rename",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										"22221111",
+										"rename"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateAccount",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"alias\": \"Saving Account\",\r\n    \"actName\": \"Pich Chanda\",\r\n    \"actNo\": \"22221113\",\r\n    \"balance\": 500.00,\r\n    \"transferLimit\": 2000.00,\r\n    \"isHidden\": true\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/accounts/11112228/update",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										"11112228",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "softDelete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isDeleted\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/accounts/22221113/soft-delete",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										"22221113",
+										"soft-delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteAccount",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/accounts/22221113",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										"22221113"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hideAccount Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/accounts/11112229/hide",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										"11112229",
+										"hide"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateAccount TransferLimit",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 5000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/accounts/11112228/transfer-limit",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										"11112228",
+										"transfer-limit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findListByActNo",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/accounts/11112223",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										"11112223"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account Type",
+					"item": [
+						{
+							"name": "findList",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiJlNzg5YWM1Ny1jYzUxLTQ3NjUtOWYyMC01Y2IzNTZmNTVlZjUiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBDVVNUT01FUiIsImlzcyI6IjA4ODc3NDQyNCIsImlzQWRtaW4iOnRydWUsImV4cCI6MTc0NTI4NTU1NywiaWF0IjoxNzQ1Mjg1NTQ3LCJqdGkiOiIwODg3NzQ0MjQifQ.h44btuLTC-FWBs0rp2IlFqcPK-tG2vRw3DTfyqgQwGFsUnZ2hykSWqy4v7ShNSKM68NGYCp_IkmOQn3GNp0xL07IybDY4I3G2vY0n4jTYAvac8Rj2G7IokJQSY4UzS-Mh7kmUrOmJLRKmzSyiSHJz3OqkLPpCxNRua95-SK-NmaHrM5l_FIp-k-v7uF9fP6_fWWsRa0419JlgjdXeKgiLbSYJ053E2sYpHrvInzWC-rkib9ZNX0eAE3F-3qOLGsHPLsGNkfv2shEOeVlxVUAupQtv6fcR5Ic9yDL_4vhuM43B22ckh8puxR0PMOOY4nn-nyL_5Jdjw8BVXqoDgcV-g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/account-types",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"account-types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findListByAlias",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/account-types/card",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"account-types",
+										"card"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteByAlias",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/account-types/saving2",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"account-types",
+										"saving2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createNew",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"alias\": \"card2\",\r\n    \"name\": \"card2\",\r\n    \"description\": \"{{$randomJobDescriptor}}\",\r\n    \"isDeleted\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/account-types",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"account-types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateByAlias",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI4NzgyZWJiNC0yMmU2LTQ3NGMtOGE4MS1hNjg1NGNhYzk5Y2YiLCJhbGciOiJSUzI1NiJ9.eyJzdHVkZW50SWQiOiJJU1RBRDAwMTAiLCJzdWIiOiJBY2Nlc3MgQVBJcyIsImF1ZCI6WyJOZXh0SlMiLCJBbmRyb2lkIiwiaU9TIl0sInNjb3BlIjoiVVNFUiBBRE1JTiIsImlzcyI6IjA5NzU0OTQ5ODEiLCJpc0FkbWluIjp0cnVlLCJleHAiOjE3NDU2OTE5NTIsImlhdCI6MTc0NTY5MTk0MiwianRpIjoiMDk3NTQ5NDk4MSJ9.P_rkineFAm-XrEDdHwganV3KOF0iP503ETISiaf4sDShn8UP6R7RBw83m1H5Z0E907AHPkshOwafvdeHaovwstg5wDGSC7D_7cadcIeouJFhUg4f3k04xVCWQiJLjXUybuaVJiyEHR7fvKS3lAXVPJw1vzF61WDMfYDyZXcKgujX_OpjXnMXUbaRLyMwvcmC_6mswy_hoWBzqjk8MiM6ICmaCc4n7CEGiieZ3_WD3vBS_w-wsjN_CWUxCuKQ9p6peeFlluodYCfhZTDl1q4gi-6Q8e6P4yOYCSh0MEtiEH7__RupfwIApa0hTjIroAmrEsVcU4wZ-rm4-EQkiimI-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"{{$randomJobDescriptor}}\",\r\n    \"isDeleted\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://bank.techinsights.guru/api/v1/account-types/card2",
+									"protocol": "https",
+									"host": [
+										"bank",
+										"techinsights",
+										"guru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"account-types",
+										"card2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\": \"088774424\",\r\n    \"email\": \"makaramouk@gmail.com\",\r\n    \"pin\": \"7654\",\r\n    \"password\": \"Qwer123@#$\",\r\n    \"confirmedPassword\": \"Qwer123@#$\",\r\n    \"nationalCardId\": \"11115557\",\r\n    \"name\": \"Mouk Makara\",\r\n    \"gender\": \"Male\",\r\n    \"acceptTerm\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sendVerification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"makaramouk@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/auth/send-verification",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"send-verification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resend-verification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"makaramouk@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/auth/resend-verification",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"resend-verification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"makaramouk@gmail.com\",\r\n    \"verifiedCode\": \"190210\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/auth/verify",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\": \"088774424\",\r\n    \"password\": \"Qwer123@#$\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "refresh-token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\": \"eyJraWQiOiI3NzdlN2EyZi1hNGM3LTRmZjktOTgyNy1hMjM5NDVkMDVjNmYiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJSZWZyZXNoIFRva2VuIiwiYXVkIjpbIk5leHRKUyIsIkFuZHJvaWQiLCJpT1MiXSwic2NvcGUiOiJVU0VSIENVU1RPTUVSIiwiaXNzIjoiMDg4Nzc0NDI0IiwiZXhwIjoxNzQ1MzcxODQzLCJpYXQiOjE3NDUyODU0NDMsImp0aSI6IjA4ODc3NDQyNCJ9.eIOjM11Iy4ESPJwcgSpoEJn4Xywp1SekiOt4o1pBpouUVIXrA82atmjStxkIGF4O0OdIsWj_uQp8POCRKPXwZt5duhnJWBzyi0fP7m4SONrEM0GaMhfuhRxtrKKVp2McXvVTZQ2VJunx5lOXNyCQzLoj6I_fZmQW7EsdXCUSzMsjqEWLrs3eLxDgrhWHCFHiZKbJjjuGRdU7hULWCaI7jcKLk4CkzIVHo59UTNLLfSDcvD_sxkVty9DEZFSHCwtfHLFsfHMEidvh8hdzPnMyTSHfNm2CsOQySp6qtVty99yAsoS-sqL-zBaxsKkDpTsaEP8azgDHBaFkyIkkOUYbpA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/auth/refresh-token",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"refresh-token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

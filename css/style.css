@@ -543,7 +543,7 @@ section.active {
 /* portfolio */
 
 .portfolio-container {
-  display: flex;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
 }
@@ -629,8 +629,8 @@ section.active {
   width: 32rem;
 }
 .portfolio-box .portfolio-carousel {
-  width: 90%;
-  margin-left: 12rem;
+  width: 100%;
+  /* margin-left: 12rem; */
   height: 45rem;
   border-radius: 1rem;
   overflow: hidden;
@@ -852,6 +852,7 @@ section.active {
   .contact-box .field-box {
     grid-template-columns: 1fr;
   }
+  
 }
 
 @media screen and (max-width: 450px) {

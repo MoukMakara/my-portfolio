@@ -859,7 +859,10 @@ section.active {
     grid-template-columns: 1fr;
   }
   .portfolio-box .portfolio-carousel {
-    width: 450px;
+    width: 360px;
+  }
+  .portfolio-detail {
+    width: 100%;
   }
 }
 
